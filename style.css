@@ -1,0 +1,252 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/*
+            MY STYLESHEET
+*/
+
+/*  --- ROOT PROPERTIES   --- */
+    :root{scroll-behavior: smooth;}
+
+    button:hover {
+        cursor: pointer;
+    }
+    button:active,
+    a:active{
+        cursor: grabbing;
+    }
+
+    :root,
+    body{
+        width: 100%;
+        height: 100%;
+    }
+
+
+/*  --- FONT PROPERTIES --- */
+    :root{
+        font-family: sans-serif;
+    }
+
+    :root{font-size: 55%;}
+        @media (min-width:  489px) {
+            :root{font-size: 60%;}
+        }
+        @media (min-width:  555px) {
+            :root{font-size: 65%;}
+        }
+        @media (min-width:  680px) {
+            :root{font-size: 75%;}
+        }
+        @media (min-width:  900px) {
+            :root{font-size: 85%;}
+        }
+        @media (min-width:  1055px) {
+            :root{font-size: 100%;}
+        }
+
+    *{
+        font-size: 1rem;
+    }
+
+    h1{
+        font-size: 3rem;
+        font-weight: 900;
+        text-shadow: 1px 3px 5px rgb(61, 61, 61);
+    }
+
+    h2{
+        font-size: 2rem;
+        font-weight: 700;
+        color: #3d0e61;
+        text-shadow: 1px 1px 2px rgb(61, 61, 61);
+    }
+
+    th{
+        font-family: cursive;
+        font-size: 1rem;
+        text-transform: capitalize;
+        font-style: italic;
+        font-weight: 600;
+        color: #000000;
+    }
+    button,
+    button > a{
+        font-style: normal;
+        letter-spacing: 2px;
+        text-decoration: none;
+    }
+
+    input::placeholder{
+        font-size: 0.8rem;
+        text-align: center;
+    }
+
+
+/*  --- BOX PROPERTIES --- */
+    *,
+    *::after,
+    *::before {
+        box-sizing: content-box;
+    }
+
+    :root,
+    body{
+        width: 100%;
+        height: 100%;
+    }
+
+    .container{
+        width: 100%;
+        height: 100%;
+    }
+
+    section{
+        height: 100vh;
+        width: 100vw;
+        margin: 5vh 0;
+    }
+
+        @media (min-width:  500px) {
+            section{ width: 95%; height: 90vh; }
+        }
+        @media (min-width:  750px) {
+            section{ width: 90%; height: 80vh; }
+        }
+        @media (min-width:  955px) {
+            section{ width: 95%; height: 85vh; }
+        }
+    input,
+    button {
+        border-radius: 5px;
+        margin: 1rem;
+    }
+    input {
+        border-style: none;
+    }
+
+/*  --- POSITION PROPERTIES --- */
+
+    .container,
+    main,
+    section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        justify-content: space-evenly;
+    }
+
+/*  --- STYLE PROPERTIES --- */
+
+    :root {
+        --shadow-color: 0deg 0% 0%;
+        --shadow-elevation-low:
+                0px -0.2px 0.3px hsl(var(--shadow-color) / 0.05),
+                0px -0.3px 0.4px -0.5px hsl(var(--shadow-color) / 0.09),
+                0px -0.8px 1.1px -1.1px hsl(var(--shadow-color) / 0.12);
+        --shadow-elevation-medium:
+                0px -0.2px 0.3px hsl(var(--shadow-color) / 0.04),
+                0px -0.6px 0.8px -0.3px hsl(var(--shadow-color) / 0.06),
+                0px -1.2px 1.6px -0.5px hsl(var(--shadow-color) / 0.08),
+                -0.1px -2.1px 2.8px -0.8px hsl(var(--shadow-color) / 0.1),
+                -0.2px -3.8px 5.1px -1.1px hsl(var(--shadow-color) / 0.12);
+        --shadow-elevation-high:
+                0px -0.2px 0.3px hsl(var(--shadow-color) / 0.04),
+                -0.1px -1.3px 1.7px -0.1px hsl(var(--shadow-color) / 0.05),
+                -0.1px -2.3px 3.1px -0.2px hsl(var(--shadow-color) / 0.05),
+                -0.1px -3.3px 4.4px -0.4px hsl(var(--shadow-color) / 0.06),
+                -0.2px -4.6px 6.1px -0.5px hsl(var(--shadow-color) / 0.07),
+                -0.3px -6.1px 8.2px -0.6px hsl(var(--shadow-color) / 0.08),
+                -0.3px -8.2px 11px -0.7px hsl(var(--shadow-color) / 0.09),
+                -0.5px -11px 14.7px -0.9px hsl(var(--shadow-color) / 0.1),
+                -0.6px -14.5px 19.4px -1px hsl(var(--shadow-color) / 0.11),
+                -0.8px -19px 25.4px -1.1px hsl(var(--shadow-color) / 0.12);
+    }
+    .container{
+        background: rgb(151,223,252);
+        background: linear-gradient(180deg, rgba(151,223,252,1) 28%, rgba(70,17,119,1) 84%);
+    }
+
+    section{
+        box-shadow: var(--shadow-elevation-high) ;
+    }
+
+    input {
+        background-color: rgba(214, 228, 255, 0.34);
+    }
+
+    input::placeholder{
+        color: rgba(70, 69, 69, 0.57);
+    }
+
+button,
+    button > a{
+        background-color: inherit;
+        color: white;
+    }
+
+    a::selection,
+    a:active,
+    a:visited,
+    a:hover,
+    a:focus-visible{
+        color: unset;
+        text-decoration: none;
+        outline: none;
+    }
+
+
+/*  --- TABLE --- */
+    table, tr, td, th {
+        border: 1px solid rgba(66, 66, 66, 0.41);
+        outline: black;
+        border-radius: 15px;
+    }
